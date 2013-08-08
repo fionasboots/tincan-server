@@ -10,6 +10,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.fionasboots.tincan.xapi.objects.Statement;
+import com.fionasboots.tincan.xapi.objects.UUID;
+
 /** Example resource class hosted at the URI path "/myresource"
  */
 @Path("/myresource")
@@ -22,10 +25,10 @@ public class MyResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIt() {
-    	Activity result = new Activity();
-    	result.setUser("Flo");
-    	result.setActivity("Testing");
-    	result.setWhen("Now");
+    	Statement result = new Statement();
+    	UUID id = new UUID();
+    	id.setValue("Unique-1");
+    	result.setId(id);
         return Response.status(Status.OK).entity(result).build();
     }
     
@@ -34,10 +37,12 @@ public class MyResource {
     @Path("/post")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response postIt(Activity activity) {
+    public Response postIt(Statement statement) {
     	
-    	Activity result = new Activity();
-    	result.setUser("me");
+    	Statement result = new Statement();
+    	UUID id = new UUID();
+    	id.setValue("Unique-2");
+    	result.setId(id);
     	
     	return Response.status(Status.OK).entity(result).build();
     }
