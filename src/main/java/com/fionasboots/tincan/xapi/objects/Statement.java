@@ -1,5 +1,9 @@
 package com.fionasboots.tincan.xapi.objects;
 
+
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
+
 import com.fionasboots.tincan.xapi.objects.Object;
 
 
@@ -8,6 +12,7 @@ import com.fionasboots.tincan.xapi.objects.Object;
  * 
  * @author Fiona Bianchi 
  */
+@JsonSerialize(include=Inclusion.NON_NULL)
 public class Statement extends CommonFields {
 
 	private Object actor;

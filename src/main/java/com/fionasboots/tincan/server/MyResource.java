@@ -1,5 +1,5 @@
 
-package com.fionasboots.tincan_server;
+package com.fionasboots.tincan.server;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

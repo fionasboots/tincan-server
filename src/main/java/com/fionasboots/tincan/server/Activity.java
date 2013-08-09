@@ -1,4 +1,4 @@
-package com.fionasboots.tincan_server;
+package com.fionasboots.tincan.server;
 
 public class Activity {
 	/**
